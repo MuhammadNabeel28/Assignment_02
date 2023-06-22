@@ -26,7 +26,7 @@ print(list_Empty);
 ///Ans
 
 var list_Days =['Sunday', 'Monday', 'Tuesday', 'Wedneday', 'Thursday', 'Friday', 'Saturday'];
-list_Days.removeAt(0);
+list_Days.removeLast();
 print(list_Days);
 list_Days.removeAt(0);
 print(list_Days);
