@@ -1,3 +1,5 @@
+
+
 void main(){
 ///Q.1: Create a list of names and print all names using the List method.
 ///
@@ -154,6 +156,264 @@ print(expenses);
   int max = numbers.reduce((value, element) => value > element ? value : element);
 
   print("Maximum value: $max");
+
+
+
+
+///Q.10: Write a Dart code that takes in a list of strings and removes any duplicate elements, 
+///returning a new list without duplicates. The order of elements in the new list should be the same as in the original list.
+///
+///ANS
+
+List<String> removeDuplicates(List<String> list) {
+  return list.toSet().toList();
+}
+
+
+  List<String> originalList = ['apple', 'banana', 'orange', 'apple', 'grape', 'banana'];
+  List<String> uniqueList = removeDuplicates(originalList);
+  
+  print('Original List: $originalList');
+  print('Unique List: $uniqueList');
+
+///Q 11: Write a Dart code that takes in a list and an integer n as parameters.
+/// The program should print a new list containing the first n elements from the original list.
+/// 
+/// Ans
+
+
+void printFirstNElements(List<dynamic> list, int n) {
+  List<dynamic> newList = list.sublist(0, n);
+  print('New List: $newList');
+}
+  List<dynamic> originalList_ = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  int n = 5;
+  
+  print('Original List: $originalList_');
+  print('n: $n');
+  printFirstNElements(originalList_, n);
+
+///Q.12: Write a Dart code that takes in a list of strings 
+///and prints a new list with the elements in reverse order. The original list should remain unchanged.
+///
+///Ans
+
+
+void printReversedOrder(List<String> list) {
+  List<String> reversedList = List.from(list.reversed);
+  print('Reversed List: $reversedList');
+}
+
+
+  List<String> originList_ = ['apple', 'banana', 'orange', 'grape'];
+  
+  print('Original List: $originList_');
+  printReversedOrder(originList_);
+
+
+
+///Q.13: Implement a code that takes in a list of integers and returns a new list containing only the unique elements 
+///from the original list. The order of elements in the new list should be the same as in the original list.
+///
+///Ans
+
+
+List<int> getUniqueElements(List<int> list) {
+  return list.toSet().toList();
+}
+
+List<int> list_number = [1, 2, 3, 4, 2, 1, 5, 3, 6];
+  List<int> uniqueList_Get = getUniqueElements(list_number);
+
+  print('Original List: $list_number');
+  print('Unique List: $uniqueList_Get');
+
+
+  ///Q.14: Write a Dart code that takes in a list of integers and 
+  ///prints a new list with the elements sorted in ascending order. The original list should remain unchanged.
+  ///
+  ///Ans
+
+void printSortedAscending(List<int> list) {
+  List<int> sortedList = List.from(list);
+  sortedList.sort();
+  print('Sorted List (Ascending): $sortedList');
+}
+
+List<int> list_num_ = [5, 2, 8, 1, 10];
+  
+  print('Original List: $list_num_');
+  printSortedAscending(list_num_);
+
+
+  ///Q.15: Implement a Dart code that uses the where() method to filter out negative numbers from a list of integers. 
+  ///The program should take in the original list as a parameter and print a new list containing only the positive numbers.
+  ///
+  ///Ans
+
+  void printPositiveNumbers(List<int> list) {
+  List<int> positiveList = list.where((num) => num >= 0).toList();
+  print('Positive Numbers: $positiveList');
+}
+List<int> list_Oforder = [5, -2, 8, -1, 10, -3];
+  
+  print('Original List: $list_Oforder');
+  printPositiveNumbers(list_Oforder);
+
+///Q.16: Implement a Dart code that uses the where() method to filter out odd numbers from a list of integers. 
+///The program should take in the original list as a parameter and print a new list containing only the even numbers.
+///
+///Ans
+
+void printEvenNumbers(List<int> list) {
+  List<int> evenList = list.where((num) => num % 2 == 0).toList();
+  print('Even Numbers: $evenList');
+}
+
+
+List<int> num_list = [5, 2, 8, 1, 10, 3];
+  
+  print('Original List: $num_list');
+  printEvenNumbers(num_list);
+
+
+///Q.17: Given a list of integers, write a Dart code that uses the map() method to create a 
+///new list with each value squared. The program should take in the original list as a parameter and print the new list.
+///
+///Ans
+
+void printSquaredValues(List<int> list) {
+  List<int> squaredList = list.map((num) => num * num).toList();
+  print('Squared Values: $squaredList');
+}
+
+List<int> list_Int = [1, 2, 3, 4, 5];
+  
+  print('Original List: $list_Int');
+  printSquaredValues(list_Int);
+
+
+///Q.18: Create a map named "person" with the following key-value pairs: "name" as "John", "age" as 25, "isStudent" as true. Write a Dart code to check if the person is both a student and over 18 years old.
+/// Print "Eligible" if both conditions are true, otherwise print "Not eligible".
+/// 
+/// Ans
+
+void checkEligibility(Map<String, dynamic> person) {
+  String name = person['name'];
+  int age = person['age'];
+  bool isStudent = person['isStudent'];
+
+  if (isStudent && age > 18) {
+    print('$name is eligible.');
+  } else {
+    print('$name is not eligible.');
+  }
+}
+
+Map<String, dynamic> person = {
+    'name': 'Sameer',
+    'age': 25,
+    'isStudent': true,
+  };
+
+  checkEligibility(person);
+
+///Q.19: Given a map representing a product with keys "name", "price", and "quantity", write Dart code to check if the product is in stock.
+/// If the quantity is greater than 0, print "In stock", otherwise print "Out of stock".
+/// 
+/// Ans
+
+void checkStock(Map<String, dynamic> product) {
+  String name = product['name'];
+  int quantity = product['quantity'];
+
+  if (quantity > 0) {
+    print('$name is in stock.');
+  } else {
+    print('$name is out of stock.');
+  }
+}
+Map<String, dynamic> product = {
+    'name': 'Dairy Milk',
+    'price': 9.99,
+    'quantity': 5,
+  };
+
+  checkStock(product);
+
+///Q.20: Create a map named "car" with the following key-value pairs: "brand" as "Toyota", "color" as "Red", "isSedan" as true. Write Dart code to check if the car is a sedan and red in color. 
+///Print "Match" if both conditions are true, otherwise print "No match".
+///
+///Ans
+
+void checkCar(Map<String, dynamic> car) {
+  String brand = car['brand'];
+  String color = car['color'];
+  bool isSedan = car['isSedan'];
+
+  if (isSedan && color == 'Red') {
+    print('$brand is a red sedan.');
+  } else {
+    print('$brand is not a red sedan.');
+  }
+}
+
+Map<String, dynamic> car = {
+    'brand': 'Toyota',
+    'color': 'Blue',
+    'isSedan': true,
+  };
+
+  checkCar(car);
+
+///Q.21: Given a map representing a user with keys "name", "isAdmin", and "isActive", write Dart code to check if 
+///the user is an active admin. If the user is both an admin and active, print "Active admin", otherwise print "Not an active admin".
+///
+///Ans
+
+void checkUser(Map<String, dynamic> user) {
+  String name = user['name'];
+  bool isAdmin = user['isAdmin'];
+  bool isActive = user['isActive'];
+
+  if (isAdmin && isActive) {
+    print('$name is an active admin.');
+  } else {
+    print('$name is not an active admin.');
+  }
+}
+
+Map<String, dynamic> user = {
+    'name': 'Ali',
+    'isAdmin': true,
+    'isActive': true,
+  };
+
+  checkUser(user);
+
+///Q.22: Given a map representing a shopping cart with keys as product names and values as quantities, write Dart code to check if 
+///a product named "Apple" exists in the cart. Print "Product found" if it exists, otherwise print "Product not found".
+///
+///Ans
+
+void checkProduct(Map<String, int> cart) {
+  if (cart.containsKey('Apple')) {
+    print('Product found');
+  } else {
+    print('Product not found');
+  }
+}
+
+Map<String, int> cart = {
+    'Orange': 1,
+    'Banana': 2,
+    'Orange': 3,
+    'Mango': 4
+    
+  };
+
+  checkProduct(cart);
+
 
 
 // ///Q.4: Create a list of numbers and create one empty list, now check for every index number is EVEN or ODD.
